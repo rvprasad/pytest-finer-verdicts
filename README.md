@@ -5,7 +5,7 @@ A pytest plugin to treat non-assertion failures as test errors.
 The plugin can be installed via `pip install pytest-finer-verdicts`.  Similarly, it can be uninstalled via `pip uninstall pytest-finer-verdicts`.
 
 ## Usage
-Consider the following snippet in a file _test.py_.
+Consider the following snippet in a file _test.py_ (available as _temp/test.py_ in the repository).
 ```
 class Engine:
     def rotations(self):
