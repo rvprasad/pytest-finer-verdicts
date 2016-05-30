@@ -9,7 +9,7 @@ setup(
     license='BSD 3-Clause License',
     keywords=['testing', 'pytest', 'verdict'],
     install_requires=['pytest>=2.9'],
-    download_url='https://github.com/rvprasad/pytest-finer-verdicts/tarball/1.0',
+    download_url='https://github.com/rvprasad/pytest-finer-verdicts/archive/v1.0.zip',
     url='https://github.com/rvprasad/pytest-finer-verdicts',
     classifiers=[
         'Intended Audience :: Developers',
