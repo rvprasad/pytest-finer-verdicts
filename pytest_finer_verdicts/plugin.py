@@ -5,7 +5,7 @@ import pytest
 def pytest_runtest_makereport(item, call):
     """Treat non-assertion failures as test errors."""
     outcome = yield
-    test_report = outcome.result
+    test_report = outcome.get_result()
 
     if call.excinfo:
         when = call.when
