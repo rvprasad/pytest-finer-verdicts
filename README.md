@@ -35,7 +35,7 @@ def test_error():
     raise RuntimeError()
     assert o.getTemp() <= 75
 ```
-**Without pytest-finer-verdicts**, `py.test test.py -v` will produce the following output.
+**Without pytest-finer-verdicts plugin**, `py.test test.py -v` will produce the following output.
 
 ```
 collected 3 items
