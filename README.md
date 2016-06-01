@@ -72,37 +72,37 @@ test.py:26: RuntimeError
 
 **With pytest-finer-verdicts plugin**, `py.test test.py -v` will produce the following output.
 ```
-    collected 3 items
+collected 3 items
 
-    test.py::test_pass PASSED
-    test.py::test_fail FAILED
-    test.py::test_error ERROR
+test.py::test_pass PASSED
+test.py::test_fail FAILED
+test.py::test_error ERROR
 
-    ==================================== ERRORS ====================================
-    _________________________ ERROR at setup of test_error _________________________
+==================================== ERRORS ====================================
+_________________________ ERROR at setup of test_error _________________________
 
-        def test_error():
-            o = Engine()
-            while o.rotations() < 50:
-                pass
-    >       raise RuntimeError()
-    E       RuntimeError
+    def test_error():
+        o = Engine()
+        while o.rotations() < 50:
+            pass
+>       raise RuntimeError()
+E       RuntimeError
 
-    test.py:26: RuntimeError
-    =================================== FAILURES ===================================
-    __________________________________ test_fail ___________________________________
+test.py:26: RuntimeError
+=================================== FAILURES ===================================
+__________________________________ test_fail ___________________________________
 
-        def test_fail():
-            o = Engine()
-            while o.rotations() < 50:
-                pass
-    >       assert o.getTemp() <= 70
-    E       assert 75 <= 70
-    E        +  where 75 = <bound method Engine.getTemp of <test.Engine object at 0x105885e80>>()
-    E        +    where <bound method Engine.getTemp of <test.Engine object at 0x105885e80>> = <test.Engine object at 0x105885e80>.getTemp
+    def test_fail():
+        o = Engine()
+        while o.rotations() < 50:
+            pass
+>       assert o.getTemp() <= 70
+E       assert 75 <= 70
+E        +  where 75 = <bound method Engine.getTemp of <test.Engine object at 0x105885e80>>()
+E        +    where <bound method Engine.getTemp of <test.Engine object at 0x105885e80>> = <test.Engine object at 0x105885e80>.getTemp
 
-    test.py:19: AssertionError
-    ================= 1 failed, 1 passed, 1 error in 0.04 seconds ==================
+test.py:19: AssertionError
+================= 1 failed, 1 passed, 1 error in 0.04 seconds ==================
 ```
 
 Notice how `test_error` is flagged as a _test error_ by the plugin.
