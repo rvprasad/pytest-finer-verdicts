@@ -7,7 +7,7 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     test_report = outcome.get_result()
 
-    if call.excinfo:
+    if call.excinfo and test_report.outcome == 'failed':
         when = call.when
         excinfo = call.excinfo
         if call.when == "call" and \
