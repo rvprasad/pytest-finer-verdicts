@@ -4,3 +4,5 @@ dist
 .cache
 __pycache__
 *.swp
+.tox
+README.rst
