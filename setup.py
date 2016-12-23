@@ -28,6 +28,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
     ],
     # the following makes a plugin available to py.test
     entry_points={'pytest11': ['finer_verdicts = pytest_finer_verdicts.plugin']}
