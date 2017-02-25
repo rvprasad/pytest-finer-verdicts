@@ -3,15 +3,16 @@ import pytest
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """Treat non-assertion failures as test errors."""
+    """Treat non-assertion and non-pytest.fail failures as test errors."""
     outcome = yield
     test_report = outcome.get_result()
 
     if call.excinfo and test_report.outcome == 'failed':
         when = call.when
         excinfo = call.excinfo
-        if call.when == "call" and \
-                isinstance(excinfo.value, AssertionError):
+        if when == "call" and \
+                (excinfo.typename == "AssertionError" or
+                        excinfo.typename == "Failed"): 
             longrepr = item.repr_failure(excinfo)
         else:
             when = 'setup' if when == 'call' else when

@@ -1,27 +1,22 @@
-class Engine:
-    def rotations(self):
-        return 51
-    def getTemp(self):
-        return 75
+import pytest
 
 
 def test_pass():
-    o = Engine()
-    while o.rotations() < 50:
-        pass
-    assert o.getTemp() <= 75
+    assert 70 <= 75
 
 
 def test_fail():
-    o = Engine()
-    while o.rotations() < 50:
-        pass
-    assert o.getTemp() <= 70
+    assert 75 <= 70
 
 
 def test_error():
-    o = Engine()
-    while o.rotations() < 50:
-        pass
     raise RuntimeError()
-    assert o.getTemp() <= 75
+
+
+def test_pytest_fail():
+    pytest.fail("Fail")
+
+
+def test_pytest_raises():
+    with pytest.raises(ValueError):
+        raise IndexError()

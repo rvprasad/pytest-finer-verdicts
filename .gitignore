@@ -1,8 +1,10 @@
 build
 dist
+.eggs
 *.egg-info
 .cache
 __pycache__
 *.swp
 .tox
+.tox-old
 README.rst

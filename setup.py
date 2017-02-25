@@ -10,15 +10,15 @@ with open('./README.rst') as fd:
 setup(
     name='pytest-finer-verdicts',
     packages=['pytest_finer_verdicts'],
-    version='1.0.3',
+    version='1.0.4',
     description='A pytest plugin to treat non-assertion failures as test errors.',
     long_description=long_description,
     author='Venkatesh-Prasad Ranganath',
     license='BSD 3-Clause License',
     platforms=['unix', 'linux', 'osx', 'cygwin', 'win32'],
     keywords=['testing', 'pytest', 'verdict'],
-    install_requires=['pytest>=2.9'],
-    download_url='https://github.com/rvprasad/pytest-finer-verdicts/archive/v1.0.3.zip',
+    install_requires=['pytest>=3.0.6'],
+    download_url='https://github.com/rvprasad/pytest-finer-verdicts/archive/v1.0.4.zip',
     url='https://github.com/rvprasad/pytest-finer-verdicts',
     classifiers=[
         'Intended Audience :: Developers',
