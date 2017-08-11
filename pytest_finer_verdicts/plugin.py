@@ -11,12 +11,8 @@ def pytest_runtest_makereport(item, call):
         when = call.when
         excinfo = call.excinfo
         if when == "call" and \
-                (excinfo.typename == "AssertionError" or
-                        excinfo.typename == "Failed"): 
-            longrepr = item.repr_failure(excinfo)
-        else:
-            when = 'setup' if when == 'call' else when
-            longrepr = item._repr_failure_py(excinfo,
-                                             style=item.config.option.tbstyle)
-        test_report.longrepr = longrepr
+            excinfo.typename != "AssertionError" and \
+                excinfo.typename != "Failed":
+            when = 'setup'
+        test_report.longrepr = item.repr_failure(excinfo)
         test_report.when = when
