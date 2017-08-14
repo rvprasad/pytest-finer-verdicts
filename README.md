@@ -75,3 +75,12 @@ test.py:17: Failed
 ```
 
 Notice how `test_error` and `test_pytest_raises` are flagged as _test errors_ by the plugin.
+
+
+## Attribution
+
+Copyright (c) 2016, Venkatesh-Prasad Ranganath
+
+Licensed under BSD 3-clause "New" or "Revised" License (https://choosealicense.com/licenses/bsd-3-clause/)
+
+**Authors:** Venkatesh-Prasad Ranganath
