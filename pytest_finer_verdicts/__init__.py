@@ -1,4 +1,4 @@
-# Copyright (c) 2016-17, Venkatesh-Prasad Ranganath
+# Copyright (c) 2016-18, Venkatesh-Prasad Ranganath
 #
 # BSD 3-clause License
 #
