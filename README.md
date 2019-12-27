@@ -30,7 +30,7 @@ def test_pytest_raises():
     with pytest.raises(ValueError):
         raise IndexError()
 ```
-**Without pytest-finer-verdicts plugin**, `py.test test.py -v` will produce the following output.
+**With pytest-finer-verdicts plugin**, `py.test test.py -v` will produce the following output.
 ```
 collected 5 items 
 
