@@ -6,7 +6,7 @@ class TestBasic:
                     assert 1 == 1
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_pass PASSED"])
+        result.stdout.fnmatch_lines(["*TestClass::test_pass PASSED*"])
 
     def test_failure(self, testdir):
         testdir.makepyfile("""
@@ -15,7 +15,7 @@ class TestBasic:
                     assert 1 == 2
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_fail FAILED"])
+        result.stdout.fnmatch_lines(["*TestClass::test_fail FAILED*"])
 
     def test_error(self, testdir):
         testdir.makepyfile("""
@@ -24,7 +24,7 @@ class TestBasic:
                     raise RuntimeError("Boom")
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_error ERROR"])
+        result.stdout.fnmatch_lines(["*TestClass::test_error ERROR*"])
 
     def test_skip(self, testdir):
         testdir.makepyfile("""
@@ -39,8 +39,8 @@ class TestBasic:
         """)
         result = testdir.runpytest("-v")
         result.stdout.fnmatch_lines([
-            "*TestClass::test_pass PASSED",
-            "*TestClass::test_skip SKIPPED"])
+            "*TestClass::test_pass PASSED*",
+            "*TestClass::test_skip SKIPPED*"])
 
     def test_pytest_fail(self, testdir):
         testdir.makepyfile("""
@@ -50,7 +50,7 @@ class TestBasic:
                     pytest.fail("PyTest.Fail")
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*Failed: PyTest.Fail"])
+        result.stdout.fnmatch_lines(["*Failed: PyTest.Fail*"])
 
     def test_pytest_raises_passed(self, testdir):
         testdir.makepyfile("""
@@ -61,7 +61,7 @@ class TestBasic:
                         raise ValueError()
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*test_pytest_raises PASSED"])
+        result.stdout.fnmatch_lines(["*test_pytest_raises PASSED*"])
 
     def test_pytest_raises_error(self, testdir):
         testdir.makepyfile("""
@@ -72,7 +72,7 @@ class TestBasic:
                         raise IndexError()
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*test_pytest_raises ERROR"])
+        result.stdout.fnmatch_lines(["*test_pytest_raises ERROR*"])
 
     def test_pytest_raises_failed(self, testdir):
         testdir.makepyfile("""
@@ -83,7 +83,7 @@ class TestBasic:
                         pass
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*test_pytest_raises FAILED"])
+        result.stdout.fnmatch_lines(["*test_pytest_raises FAILED*"])
 
     def test_pass_with_fixtures(self, testdir):
         testdir.makepyfile("""
@@ -98,7 +98,7 @@ class TestBasic:
                     assert 1 == 1
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_pass PASSED"])
+        result.stdout.fnmatch_lines(["*TestClass::test_pass PASSED*"])
 
     def test_failure_with_fixtures(self, testdir):
         testdir.makepyfile("""
@@ -113,7 +113,7 @@ class TestBasic:
                     assert 1 == 2
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_fail FAILED"])
+        result.stdout.fnmatch_lines(["*TestClass::test_fail FAILED*"])
 
     def test_error_with_fixtures(self, testdir):
         testdir.makepyfile("""
@@ -128,7 +128,7 @@ class TestBasic:
                     raise RuntimeError("Boom")
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_error ERROR"])
+        result.stdout.fnmatch_lines(["*TestClass::test_error ERROR*"])
 
     def test_skip_with_fixtures(self, testdir):
         testdir.makepyfile("""
@@ -149,8 +149,8 @@ class TestBasic:
         """)
         result = testdir.runpytest("-v")
         result.stdout.fnmatch_lines([
-            "*TestClass::test_pass PASSED",
-            "*TestClass::test_skip SKIPPED"])
+            "*TestClass::test_pass PASSED*",
+            "*TestClass::test_skip SKIPPED*"])
 
     def test_pytest_fail_with_fixtures(self, testdir):
         testdir.makepyfile("""
@@ -166,7 +166,7 @@ class TestBasic:
                     pytest.fail("PyTest.Fail")
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*Failed: PyTest.Fail"])
+        result.stdout.fnmatch_lines(["*Failed: PyTest.Fail*"])
 
     def test_failure_in_setup(self, testdir):
         testdir.makepyfile("""
@@ -178,7 +178,7 @@ class TestBasic:
                     assert 1 == 1
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_pass ERROR"])
+        result.stdout.fnmatch_lines(["*TestClass::test_pass ERROR*"])
 
     def test_failure_in_teardown(self, testdir):
         testdir.makepyfile("""
@@ -190,4 +190,4 @@ class TestBasic:
                     assert 1 == 1
         """)
         result = testdir.runpytest("-v")
-        result.stdout.fnmatch_lines(["*TestClass::test_pass ERROR"])
+        result.stdout.fnmatch_lines(["*TestClass::test_pass ERROR*"])
