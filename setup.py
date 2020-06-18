@@ -10,14 +10,14 @@ with open('./README.rst') as fd:
 setup(
     name='pytest-finer-verdicts',
     packages=['pytest_finer_verdicts'],
-    version='1.0.6',
+    version='1.0.6post1',
     description='A pytest plugin to treat non-assertion failures as test errors.',
     long_description=long_description,
     author='Venkatesh-Prasad Ranganath',
     license='BSD 3-Clause License',
     platforms=['unix', 'linux', 'osx', 'cygwin', 'win32'],
     keywords=['testing', 'pytest', 'verdict'],
-    install_requires=['pytest>=3.4.0'],
+    install_requires=['pytest>=5.4.3'],
     download_url='https://github.com/rvprasad/pytest-finer-verdicts/archive/v1.0.6.zip',
     url='https://github.com/rvprasad/pytest-finer-verdicts',
     classifiers=[
@@ -25,10 +25,7 @@ setup(
         'Topic :: Software Development :: Testing',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.8',
     ],
     # the following makes a plugin available to py.test
     entry_points={'pytest11': ['finer_verdicts = pytest_finer_verdicts.plugin']}
