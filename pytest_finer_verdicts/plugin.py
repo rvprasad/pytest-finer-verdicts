@@ -1,8 +1,8 @@
-# Copyright (c) 2016-18, Venkatesh-Prasad Ranganath
+# Copyright (c) 2016-18, Venkatesh-Prasad Ranganath, Christer Jansson
 #
 # BSD 3-clause License
 #
-# Author: Venkatesh-Prasad Ranganath (rvprasad)
+# Author: Venkatesh-Prasad Ranganath (rvprasad), Christer Jansson
 
 import pytest
 

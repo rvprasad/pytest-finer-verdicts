@@ -13,7 +13,7 @@ setup(
     version='1.0.6post1',
     description='A pytest plugin to treat non-assertion failures as test errors.',
     long_description=long_description,
-    author='Venkatesh-Prasad Ranganath',
+    author='Venkatesh-Prasad Ranganath, Christer Jansson'
     license='BSD 3-Clause License',
     platforms=['unix', 'linux', 'osx', 'cygwin', 'win32'],
     keywords=['testing', 'pytest', 'verdict'],
